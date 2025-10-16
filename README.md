@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Infinity Globalindo Trade - Landing Page
+
+A modern, responsive landing page built with Next.js 15, TypeScript, and Tailwind CSS with dark mode support.
+
+## Features
+
+- ⚡ **Next.js 15** with App Router
+- 🎨 **Tailwind CSS** for styling
+- 🌙 **Dark Mode** support with next-themes
+- 📱 **Responsive Design** for all devices
+- 🎯 **TypeScript** for type safety
+- 🧩 **Modern UI Components** with shadcn/ui
+- ⚡ **Fast Performance** with optimized builds
+
+## Tech Stack
+
+- **Framework**: Next.js 15
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Custom components with Radix UI primitives
+- **Icons**: Lucide React
+- **Theme**: next-themes for dark mode
+- **Font**: Geist Sans & Geist Mono
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd infinity_globalindo_trade
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── globals.css          # Global styles and CSS variables
+│   ├── layout.tsx           # Root layout with theme provider
+│   └── page.tsx             # Home page
+├── components/
+│   ├── ui/                  # Reusable UI components
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   │   └── badge.tsx
+│   ├── theme-provider.tsx   # Theme context provider
+│   └── theme-toggle.tsx    # Dark mode toggle component
+└── lib/
+    └── utils.ts             # Utility functions
+```
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+### Colors and Theme
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project uses CSS custom properties for theming. You can customize colors in `src/app/globals.css`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```css
+:root {
+  --primary: 221.2 83.2% 53.3%;
+  --secondary: 210 40% 96%;
+  /* ... other colors */
+}
+```
 
-## Deploy on Vercel
+### Content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Edit `src/app/page.tsx` to customize the landing page content, sections, and layout.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Components
+
+All UI components are in `src/components/ui/` and can be customized or extended as needed.
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically
+
+### Other Platforms
+
+The project can be deployed to any platform that supports Next.js:
+- Netlify
+- Railway
+- DigitalOcean App Platform
+- AWS Amplify
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+## License
+
+This project is licensed under the MIT License.
+# Infinity-Globalindo-Trade
