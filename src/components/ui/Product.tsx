@@ -153,7 +153,7 @@ export default function Product() {
                 {
                   data.items.filter((res) => {
                     if (
-                      res.TabCategory === tab &&
+                      res.TabCategory === tab ||
                       filter.find((res2) => res2.title === res.category)
                     ) {
                       return true;
@@ -167,7 +167,7 @@ export default function Product() {
                 {data.items
                   .filter((res) => {
                     if (
-                      res.TabCategory === tab &&
+                      res.TabCategory === tab ||
                       filter.find((res2) => res2.title === res.category)
                     ) {
                       return true;

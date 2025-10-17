@@ -1,10 +1,10 @@
 import Footer from "@/components/ui/Footer";
 import Hero from "@/components/ui/Hero";
 import Product from "@/components/ui/Product";
-import { MapPinHouse, MapPinHouseIcon } from "lucide-react";
-import Image from "next/image";
+import Contact from "@/components/ui/Contact";
 
 export default function Home() {
+  
   return (
     <div>
       <Hero />
@@ -12,6 +12,7 @@ export default function Home() {
         <Product />
       </div>
       <Footer />
+      <Contact />
     </div>
   );
 }

@@ -1,9 +1,12 @@
-import { MapPinHouseIcon } from "lucide-react";
+import { Icon } from "@iconify/react";
 import React from "react";
 
 export default function Hero() {
+  const address = process.env.COMPANY_ADDRESS || '';
+  const unit = process.env.COMPANY_UNIT || '';
+  const companyName = process.env.COMPANY_NAME || '';
   return (
-    <div id="hero" className="min-h-[650px] h-full py-10 bg-gradient-to-b from-[#282828] via-[#212C84] to-[#1D98C4]">
+    <div id="hero" className="min-h-[650px] h-full bg-gradient-to-b from-[#282828] via-[#212C84] to-[#1D98C4]">
       <div className="flex items-center justify-between container px-20 mx-auto w-full max-w-[1440px] gap-x-16 min-w-3/4">
         <div className="text-white w-1/2">
           <img
@@ -12,7 +15,7 @@ export default function Hero() {
             className="w-[133.33px] h-auto mb-5"
           />
           <h1 className="text-[32px] font-semibold">
-            PT Ifinity Globalindo Trade
+            {companyName}
           </h1>
 
           <p className="text-xl mt-5">
@@ -24,12 +27,11 @@ export default function Hero() {
           </p>
 
           <div className="mt-16 flex items-center gap-x-5">
-            <button
-              type="button"
+            <a href={process.env.COMPANY_SITE} target="_blank"
               className="w-full max-w-56 button bg-[#D4AF37] text-white"
             >
               Visit Our Company Site
-            </button>
+            </a>
             <button
               type="button"
               className="w-full max-w-56 button bg-white text-black"
@@ -42,20 +44,18 @@ export default function Hero() {
           <img
             src="/Group 1.png"
             alt="Group Image"
-            className="w-auto h-[450px] -mb-16"
+            className="w-auto h-[500px] -mb-20"
           />
 
           <div className="pl-10">
             <div className="rounded-xl z-20 bg-[#282828] border border-[#666666] p-5 text-white flex gap-x-5">
-              <MapPinHouseIcon className="text-[#D4AF37] text-2xl" />
+              <Icon icon={"hugeicons:location-04"} className="text-[#D4AF37] text-5xl" />
               <div>
                 <h1 className="font-semibold">
-                  TOWER ARCADE BUSINESS CENTER 6Th FLOOR UNIT 6-03.
+                  {unit}
                 </h1>
                 <p className="text-sm text-[#BBBBBB] mt-3">
-                  JL. PANTAI INDAH UTARA 2 PIK, Desa/Kelurahan Kapuk Muara, Kec.
-                  Penjaringan, Kota Adm. Jakarta Utara, Provinsi DKI Jakarta,
-                  Kode Pos: 14460
+                  {address}
                 </p>
               </div>
             </div>
