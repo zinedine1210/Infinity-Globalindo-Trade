@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import React from "react";
 import { getEnvVar } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Hero() {
   const address = getEnvVar("COMPANY_ADDRESS", "");
@@ -10,10 +11,13 @@ export default function Hero() {
     <div id="hero" className="min-h-full py-10 xl:py-0 xl:min-h-[650px] h-full bg-gradient-to-b from-[#282828] via-[#212C84] to-[#1D98C4]">
       <div className="xl:flex xl:items-center xl:justify-between container px-5 sm:px-20 mx-auto w-full xl:max-w-[1440px] xl:gap-x-16 xl:min-w-3/4">
         <div className="text-white w-full xl:w-1/2 text-center xl:text-start">
-          <img
+          <Image
             src="/Logo Infinity Globalindo Trade 2.png"
             alt="LOGO"
+            width={134}
+            height={40}
             className="w-[133.33px] h-auto mb-5 mx-auto xl:mx-0"
+            priority
           />
           <h1 className="text-[32px] font-semibold">
             {companyName}
@@ -42,10 +46,13 @@ export default function Hero() {
           </div>
         </div>
         <div className="w-full xl:w-1/2 relative">
-          <img
+          <Image
             src="/Group 1.png"
             alt="Group Image"
+            width={800}
+            height={500}
             className="w-auto h-[385px] xl:h-[500px] mx-auto xl:mx-0 -mb-20"
+            priority={false}
           />
 
           <div className="w-full sm:w-3/4 xl:w-full mx-auto xl:pl-10">

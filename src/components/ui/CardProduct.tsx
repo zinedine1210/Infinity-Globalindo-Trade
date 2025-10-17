@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { DataProps } from "./Product";
 import Modal from "./Modal";
 
@@ -16,10 +17,13 @@ export default function CardProduct({ prod }: { prod: DataProps }) {
         onClick={() => setOpen(true)}
       >
         <div className="w-full overflow-hidden h-[240px] flex items-center justify-center">
-          <img
+          <Image
             src={prod.imageUrl}
             alt={prod.title}
-            className="w-full h-auto bg-cover"
+            width={500}
+            height={500}
+            className="h-[240px] w-auto"
+            priority={false}
           />
         </div>
 
@@ -28,11 +32,11 @@ export default function CardProduct({ prod }: { prod: DataProps }) {
 
           <div className="flex items-center justify-between mt-3">
             <div className="flex items-center gap-x-2 text-[#888888] text-sm">
-              <img src="/weight.png" alt="Weight" className="w-4 h-4" />
+              <Image src="/weight.png" alt="Weight" width={16} height={16} className="w-4 h-4" />
               {prod.specification.weight}
             </div>
             <div className="flex items-center gap-x-2 text-[#888888] text-sm">
-              <img src="/dimension.png" alt="Dimension" className="w-4 h-4" />
+              <Image src="/dimension.png" alt="Dimension" width={16} height={16} className="w-4 h-4" />
               {prod.specification.productDimension}
             </div>
           </div>

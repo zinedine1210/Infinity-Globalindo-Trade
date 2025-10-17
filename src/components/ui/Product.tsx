@@ -7,6 +7,7 @@ import data from "../../../public/data.json";
 import CardProduct from "./CardProduct";
 import Filter from "./Filter";
 import { groupBy } from "@/lib/utils";
+import Image from "next/image";
 
 export interface FilterProps {
   title: string;
@@ -92,9 +93,11 @@ export default function Product() {
                 type="button"
                 onClick={() => setTab(item[0])}
               >
-                <img
+                <Image
                   src={item[1][0].imageUrl}
                   alt={item[1][0].title}
+                  width={40}
+                  height={40}
                   className="w-10 h-10"
                 />
                 <h1>{item[0]}</h1>

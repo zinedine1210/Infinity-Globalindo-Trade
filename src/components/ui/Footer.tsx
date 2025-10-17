@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { Phone } from "lucide-react";
 import React from "react";
+import Image from "next/image";
 
 export default function Footer() {
   const companyName = process.env.COMPANY_NAME || "";
@@ -10,9 +11,11 @@ export default function Footer() {
     <div className="px-5 sm:px-0 container mx-auto">
       <div className="py-5 border-y border-gray-500/20 sm:flex xl:items-center gap-x-10 xl:gap-x-20">
         <div>
-          <img
+          <Image
             src="/Logo Infinity Globalindo Trade 1.png"
             alt="LOGO"
+            width={107}
+            height={40}
             className="w-32 xl:w-[106.67px] h-auto"
           />
         </div>

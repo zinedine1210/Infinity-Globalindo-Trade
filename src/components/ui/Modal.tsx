@@ -4,6 +4,7 @@ import { useState } from "react";
 import { DataProps } from "./Product";
 import { Icon } from "@iconify/react";
 import { twMerge } from "tailwind-merge";
+import Image from "next/image";
 
 export default function Modal({
   item,
@@ -32,9 +33,11 @@ export default function Modal({
             </button>
             <div className="relative bg-white w-1/2 min-w-full max-w-[800px] rounded-xl overflow-hidden shadow-sm">
               <div className="h-[400px] w-full overflow-hidden flex items-center justify-center">
-                <img
+                <Image
                   src={item.imageUrl}
                   alt={item.title}
+                  width={800}
+                  height={800}
                   className="h-[400px] w-auto"
                 />
               </div>
