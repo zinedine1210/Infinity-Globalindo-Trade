@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/react";
 import { DataProps, FilterProps } from "./Product";
 import { twMerge } from "tailwind-merge";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 export default function ModalFilter({
   groupedFilters,
@@ -17,7 +17,7 @@ export default function ModalFilter({
 }) {
   const [filter, setFilter] = useState<FilterProps[]>([]);
 
-  const handleCheckFilter = (e: any, item: string) => {
+  const handleCheckFilter = (e: ChangeEvent<HTMLInputElement>, item: string) => {
     const checked = e.target.checked;
     if (checked) {
       setFilter([...filter, { title: item }]);
@@ -27,7 +27,7 @@ export default function ModalFilter({
     }
   };
 
-  const handleCheckAll = (e: any) => {
+  const handleCheckAll = (e: ChangeEvent<HTMLInputElement>) => {
     const checked = e.target.checked;
     let filAll: FilterProps[] = [];
     if (checked) {

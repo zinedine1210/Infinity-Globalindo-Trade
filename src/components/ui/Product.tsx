@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { ChangeEvent, useMemo, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 import data from "../../../public/data.json";
 import CardProduct from "./CardProduct";
 import Filter from "./Filter";
+import { groupBy } from "@/lib/utils";
 
 export interface FilterProps {
   title: string;
@@ -31,24 +32,14 @@ export interface DataProps {
 }
 
 export default function Product() {
-  const groupedTab: Record<string, DataProps[]> = data.items.reduce(
-    (acc: Record<string, DataProps[]>, item: DataProps) => {
-      const cat = item.TabCategory;
-      if (!acc[cat]) acc[cat] = [];
-      acc[cat].push(item);
-      return acc;
-    },
-    {}
+  const groupedTab = useMemo(
+    () => groupBy<DataProps, string>(data.items, (item) => item.TabCategory),
+    []
   );
 
-  const groupedFilters: Record<string, DataProps[]> = data.items.reduce(
-    (acc: Record<string, DataProps[]>, item: DataProps) => {
-      const cat = item.category;
-      if (!acc[cat]) acc[cat] = [];
-      acc[cat].push(item);
-      return acc;
-    },
-    {}
+  const groupedFilters = useMemo(
+    () => groupBy<DataProps, string>(data.items, (item) => item.category),
+    []
   );
 
   const [filter, setFilter] = useState<FilterProps[]>([]);
@@ -56,7 +47,7 @@ export default function Product() {
     data.items[0].TabCategory
   );
 
-  const handleCheckFilter = (e: any, item: string) => {
+  const handleCheckFilter = (e: ChangeEvent<HTMLInputElement>, item: string) => {
     const checked = e.target.checked;
     if (checked) {
       setFilter([...filter, { title: item }]);
@@ -66,17 +57,22 @@ export default function Product() {
     }
   };
 
-  const handleCheckAll = (e: any) => {
+  const handleCheckAll = (e: ChangeEvent<HTMLInputElement>) => {
     const checked = e.target.checked;
     let filAll: FilterProps[] = [];
     if (checked) {
-      filAll = Object.entries(groupedFilters).map((res) => ({ title: res[0] }));
+      filAll = Object.keys(groupedFilters).map((title) => ({ title }));
     } else {
       filAll = [];
     }
 
     setFilter(filAll);
   };
+
+  const isVisible = (item: DataProps) =>
+    item.TabCategory === tab || filter.some((f) => f.title === item.category);
+
+  const visibleItems = useMemo(() => data.items.filter(isVisible), [filter, tab, isVisible]);
 
   return (
     <section>
@@ -108,34 +104,11 @@ export default function Product() {
         </div>
         <div className="border-t-2 mt-16 py-16 border-gray-200">
           <div className="sm:flex gap-x-10">
-            <Filter onSave={(value) => setFilter(value)} filter={filter} groupedFilters={groupedFilters} handleCheckAll={(e: any) => handleCheckAll(e)} handleCheckFilter={(e: any, value: string) => handleCheckFilter(e, value)}/>
+            <Filter onSave={(value) => setFilter(value)} filter={filter} groupedFilters={groupedFilters} handleCheckAll={handleCheckAll} handleCheckFilter={handleCheckFilter}/>
             <div className="w-full">
-              <h1 className="font-semibold text-[28px] mb-5">
-                Showing{" "}
-                {
-                  data.items.filter((res) => {
-                    if (
-                      res.TabCategory === tab ||
-                      filter.find((res2) => res2.title === res.category)
-                    ) {
-                      return true;
-                    }
-                    return false;
-                  }).length
-                }{" "}
-                product
-              </h1>
+              <h1 className="font-semibold text-[28px] mb-5">Showing {visibleItems.length} product</h1>
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
-                {data.items
-                  .filter((res) => {
-                    if (
-                      res.TabCategory === tab ||
-                      filter.find((res2) => res2.title === res.category)
-                    ) {
-                      return true;
-                    }
-                    return false;
-                  })
+                {visibleItems
                   .map((prod, index) => {
                     return <CardProduct prod={prod} key={index} />;
                   })}

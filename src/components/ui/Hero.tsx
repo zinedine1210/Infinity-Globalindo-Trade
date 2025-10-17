@@ -1,10 +1,11 @@
 import { Icon } from "@iconify/react";
 import React from "react";
+import { getEnvVar } from "@/lib/utils";
 
 export default function Hero() {
-  const address = process.env.COMPANY_ADDRESS || '';
-  const unit = process.env.COMPANY_UNIT || '';
-  const companyName = process.env.COMPANY_NAME || '';
+  const address = getEnvVar("COMPANY_ADDRESS", "");
+  const unit = getEnvVar("COMPANY_UNIT", "");
+  const companyName = getEnvVar("COMPANY_NAME", "");
   return (
     <div id="hero" className="min-h-full py-10 xl:py-0 xl:min-h-[650px] h-full bg-gradient-to-b from-[#282828] via-[#212C84] to-[#1D98C4]">
       <div className="xl:flex xl:items-center xl:justify-between container px-5 sm:px-20 mx-auto w-full xl:max-w-[1440px] xl:gap-x-16 xl:min-w-3/4">
@@ -27,7 +28,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-16 justify-center xl:justify-start sm:flex space-y-5 sm:space-y-0 items-center gap-x-5">
-            <a href={process.env.COMPANY_SITE} target="_blank"
+            <a href={getEnvVar("COMPANY_SITE", "#")} target="_blank"
               className="w-full max-w-56 button mx-auto sm:mx-0 block bg-[#D4AF37] text-white"
             >
               Visit Our Company Site

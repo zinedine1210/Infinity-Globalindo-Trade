@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import ModalFilter from "./ModalFilter";
 import { DataProps, FilterProps } from "./Product";
 import { Icon } from "@iconify/react";
@@ -13,8 +13,8 @@ export default function Filter({
   onSave
 }: {
   groupedFilters: Record<string, DataProps[]>;
-  handleCheckAll: (e: any) => void;
-  handleCheckFilter: (e: any, item: string) => void;
+  handleCheckAll: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleCheckFilter: (e: ChangeEvent<HTMLInputElement>, item: string) => void;
   filter: FilterProps[];
   onSave: (value: FilterProps[]) => void;
 }) {
