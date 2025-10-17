@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 import data from "../../../public/data.json";
 import CardProduct from "./CardProduct";
+import Filter from "./Filter";
 
-interface FilterProps {
+export interface FilterProps {
   title: string;
 }
 
@@ -79,11 +80,11 @@ export default function Product() {
 
   return (
     <section>
-      <div className="w-full max-w-[1440px] min-w-3/4 mx-auto">
+      <div className="w-full px-10 xl:px-0 xl:max-w-[1440px] min-w-3/4 mx-auto">
         <h1 className="text-center font-semibold text-black text-5xl">
           Our Product
         </h1>
-        <div className="flex items-center justify-center mt-8 gap-x-5">
+        <div className="flex items-center justify-center mt-8 gap-x-5 gap-y-2 flex-wrap">
           {Object.entries(groupedTab).map((item, index) => {
             return (
               <button
@@ -96,7 +97,7 @@ export default function Product() {
                 onClick={() => setTab(item[0])}
               >
                 <img
-                  src={"/Logo Infinity Globalindo Trade 1.png"}
+                  src={item[1][0].imageUrl}
                   alt={item[1][0].title}
                   className="w-10 h-10"
                 />
@@ -106,49 +107,10 @@ export default function Product() {
           })}
         </div>
         <div className="border-t-2 mt-16 py-16 border-gray-200">
-          <div className="flex gap-x-10">
-            <div className="w-fit min-w-56 max-w-72">
-              <h1 className="font-medium text-xl">Select Product</h1>
-              <p className="mt-5">By categories</p>
-              <div className="px-5 mt-5 space-y-5">
-                <label htmlFor="all" className="flex items-center gap-x-2">
-                  <input
-                    type="checkbox"
-                    checked={
-                      filter.length == Object.entries(groupedFilters).length
-                    }
-                    onChange={(e) => handleCheckAll(e)}
-                    id="all"
-                    className="w-5 h-5 outline-none"
-                  />
-                  <h1 className="text-sm">All Categories</h1>
-                </label>
-                {Object.entries(groupedFilters).map((item, index) => {
-                  return (
-                    <label
-                      key={index}
-                      htmlFor={item[0]}
-                      className="flex items-center gap-x-2"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={
-                          filter.find((res) => res.title === item[0])
-                            ? true
-                            : false
-                        }
-                        onChange={(e) => handleCheckFilter(e, item[0])}
-                        id={item[0]}
-                        className="w-5 h-5 outline-none"
-                      />
-                      <h1 className="text-sm text-[#666666]">{item[0]}</h1>
-                    </label>
-                  );
-                })}
-              </div>
-            </div>
+          <div className="sm:flex gap-x-10">
+            <Filter onSave={(value) => setFilter(value)} filter={filter} groupedFilters={groupedFilters} handleCheckAll={(e: any) => handleCheckAll(e)} handleCheckFilter={(e: any, value: string) => handleCheckFilter(e, value)}/>
             <div className="w-full">
-              <h1 className="font-semibold text-3xl mb-5">
+              <h1 className="font-semibold text-[28px] mb-5">
                 Showing{" "}
                 {
                   data.items.filter((res) => {
@@ -163,7 +125,7 @@ export default function Product() {
                 }{" "}
                 product
               </h1>
-              <div className="grid grid-cols-2 xl:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
                 {data.items
                   .filter((res) => {
                     if (

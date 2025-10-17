@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <div className="pt-56 pb-20">
+      <div className="pt-20 xl:pt-56 pb-20">
         <Product />
       </div>
       <Footer />
