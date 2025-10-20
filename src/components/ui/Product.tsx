@@ -32,7 +32,7 @@ export interface DataProps {
   packingInclude: string;
 }
 
-export default function Product() {
+export default function Product({ phone }: { phone: string }) {
   const groupedTab = useMemo(
     () => groupBy<DataProps, string>(data.items, (item) => item.TabCategory),
     []
@@ -77,7 +77,7 @@ export default function Product() {
 
   return (
     <section>
-      <div className="w-full px-10 xl:px-0 xl:max-w-[1440px] min-w-3/4 mx-auto">
+      <div className="w-full px-10 xl:px-10 2xl:px-0 xl:max-w-[1440px] min-w-3/4 mx-auto">
         <h1 className="text-center font-semibold text-black text-5xl">
           Our Product
         </h1>
@@ -113,7 +113,7 @@ export default function Product() {
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
                 {visibleItems
                   .map((prod, index) => {
-                    return <CardProduct prod={prod} key={index} />;
+                    return <CardProduct phone={phone} prod={prod} key={index} />;
                   })}
               </div>
             </div>

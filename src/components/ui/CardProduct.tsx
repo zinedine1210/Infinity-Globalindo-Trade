@@ -1,11 +1,9 @@
-"use client";
-
 import React, { useState } from "react";
 import Image from "next/image";
 import { DataProps } from "./Product";
 import Modal from "./Modal";
 
-export default function CardProduct({ prod }: { prod: DataProps }) {
+export default function CardProduct({ prod, phone }: { prod: DataProps, phone: string }) {
   const [open, setOpen] = useState(false);
   const handleClose = () => {
     setOpen(false);
@@ -42,7 +40,7 @@ export default function CardProduct({ prod }: { prod: DataProps }) {
           </div>
         </div>
       </button>
-      {open && <Modal item={prod} onClose={() => handleClose()} />}
+      {open && <Modal phone={phone} item={prod} onClose={() => handleClose()} />}
     </>
   );
 }

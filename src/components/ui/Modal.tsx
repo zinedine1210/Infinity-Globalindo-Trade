@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { DataProps } from "./Product";
 import { Icon } from "@iconify/react";
@@ -9,12 +7,13 @@ import Image from "next/image";
 export default function Modal({
   item,
   onClose,
+  phone
 }: {
   item: DataProps;
   onClose: () => void;
+  phone: string
 }) {
   const [tab, setTab] = useState(1);
-  const phone = process.env.WHATSAPP_NUMBER || '';
   const waUrl = `https://wa.me/${phone}`;
 
   return (
@@ -55,10 +54,10 @@ export default function Modal({
                   </a>
                 </div>
                 <div className="overflow-x-auto">
-                  <div className="grid-flow-col auto-cols-[200px] grid py-5 border-t border-gray-500/20">
+                  <div className="grid-flow-col auto-cols-auto grid py-5 border-t border-gray-500/20">
                     <button
                       className={twMerge(
-                        "block w-full py-3 text-xl whitespace-nowrap",
+                        "block w-full min-w-56 py-3 text-xl whitespace-nowrap",
                         tab === 1
                           ? "border-b-2 border-[#4349F7] text-[#4349F7] font-medium"
                           : "border-b border-gray-500/20 text-[#282828]"
@@ -70,7 +69,7 @@ export default function Modal({
                     </button>
                     <button
                       className={twMerge(
-                        "block w-full py-3 text-xl whitespace-nowrap",
+                        "block w-full min-w-56 py-3 text-xl whitespace-nowrap",
                         tab === 2
                           ? "border-b-2 border-[#4349F7] text-[#4349F7] font-medium"
                           : "border-b border-gray-500/20 text-[#282828]"
@@ -82,7 +81,7 @@ export default function Modal({
                     </button>
                     <button
                       className={twMerge(
-                        "block w-full py-3 text-xl whitespace-nowrap",
+                        "block w-full min-w-56 py-3 text-xl whitespace-nowrap",
                         tab === 3
                           ? "border-b-2 border-[#4349F7] text-[#4349F7] font-medium"
                           : "border-b border-gray-500/20 text-[#282828]"

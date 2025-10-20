@@ -2,11 +2,12 @@ import { Icon } from "@iconify/react";
 import { Phone } from "lucide-react";
 import React from "react";
 import Image from "next/image";
+import { getEnvVar } from "@/lib/utils";
 
 export default function Footer() {
-  const companyName = process.env.COMPANY_NAME || "";
-  const phone = process.env.WHATSAPP_NUMBER || "";
-  const email = process.env.EMAIL || "";
+  const companyName = getEnvVar("COMPANY_NAME", "");
+  const phone = getEnvVar("WHATSAPP_NUMBER", "");
+  const email = getEnvVar("EMAIL", "");
   return (
     <div className="px-5 sm:px-0 container mx-auto">
       <div className="py-5 border-y border-gray-500/20 sm:flex xl:items-center gap-x-10 xl:gap-x-20">

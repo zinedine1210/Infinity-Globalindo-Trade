@@ -1,11 +1,12 @@
 import { Icon } from "@iconify/react";
 import React from "react";
+import { getEnvVar } from "@/lib/utils";
 
 export default function Contact() {
-  const message = encodeURIComponent(process.env.CHAT_DEFAULT || 'Halo');
-  const phone = process.env.WHATSAPP_NUMBER || '';
+  const message = encodeURIComponent(getEnvVar("CHAT_DEFAULT", "Halo"));
+  const phone = getEnvVar("WHATSAPP_NUMBER", "");
   const waUrl = `https://wa.me/${phone}?text=${message}`;
-  const name = process.env.WHATSAPP_NAME || '';
+  const name = getEnvVar("WHATSAPP_NAME", "");
 
   return (
     <a
