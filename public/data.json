@@ -1,18 +1,18 @@
 {
     "items": [
         {
-            "imageUrl": "/items/1.jpeg",
-            "title": "Steel Locker 1-Door",
+            "imageUrl": "/items/XA6-25 _Electronic Password_.png",
+            "title": "XA6-25 <Electronic Password>",
             "description": "Durable single-door steel locker suitable for offices, gyms, and warehouses.",
             "phoneNumber": "+62 812-0000-0001",
             "TabCategory": "Safety Box",
-            "category": "General",
+            "category": "XA6 Series",
             "specification": {
-                "productDimension": "1850 x 380 x 450 mm",
-                "innerDimension": "1820 x 365 x 430 mm",
-                "boxBoardThickness": "0.6 mm cold-rolled steel",
-                "doorThickness": "0.8 mm reinforced door",
-                "weight": "24 kg"
+                "productDimension": "25*35*26 cm",
+                "innerDimension": ": 24*34*18 cm",
+                "boxBoardThickness": "2 mm",
+                "doorThickness": "5 mm",
+                "weight": "8 kg"
             },
             "availableSize": [
                 { "title": "Standard", "desc": "1850 x 380 x 450 mm" },
@@ -22,18 +22,18 @@
             "packingInclude": "Locker body, 2 keys, 4 adjustable feet"
         },
         {
-            "imageUrl": "/items/2.jpeg",
-            "title": "Steel Locker 2-Door",
+            "imageUrl": "/items/XA6-25 _Fingerprint Password_.png",
+            "title": "XA6-25 <Fingerprint Password>",
             "description": "Two-compartment locker with individual locking doors for shared spaces.",
             "phoneNumber": "+62 812-0000-0002",
             "TabCategory": "Padel Tennis Racket",
-            "category": "F6 Series",
+            "category": "XA6 Series",
             "specification": {
-                "productDimension": "1850 x 380 x 450 mm",
-                "innerDimension": "(2) 900 x 365 x 430 mm",
-                "boxBoardThickness": "0.6 mm cold-rolled steel",
-                "doorThickness": "0.8 mm reinforced door",
-                "weight": "27 kg"
+                "productDimension": "25*35*26 cm",
+                "innerDimension": "24*34*18 cm",
+                "boxBoardThickness": "2 mm",
+                "doorThickness": "5 mm",
+                "weight": "8 kg"
             },
             "availableSize": [
                 { "title": "Standard", "desc": "1850 x 380 x 450 mm (2 sections)" }
@@ -42,18 +42,18 @@
             "packingInclude": "Locker body, 4 keys (2 per door), manual"
         },
         {
-            "imageUrl": "/items/3.jpeg",
+            "imageUrl": "/items/XA6-25 _Electronic Password_.png",
             "title": "Steel Locker 3-Door",
             "description": "Triple-door steel locker ideal for schools and staff rooms.",
             "phoneNumber": "+62 812-0000-0003",
             "TabCategory": "Pneumatic",
             "category": "XA6 Series",
             "specification": {
-                "productDimension": "1850 x 900 x 450 mm",
-                "innerDimension": "(3) 600 x 280 x 430 mm",
-                "boxBoardThickness": "0.6 mm",
-                "doorThickness": "0.8 mm",
-                "weight": "34 kg"
+                "productDimension": "30 x 36 x 30 cm",
+                "innerDimension": "28 x 35 x 20 cm",
+                "boxBoardThickness": " 2 mm",
+                "doorThickness": "5 mm",
+                "weight": "10 kg"
             },
             "availableSize": [
                 { "title": "Wide", "desc": "1850 x 900 x 450 mm" },
@@ -63,18 +63,18 @@
             "packingInclude": "Assembled unit, 6 keys (2 per door), anchors"
         },
         {
-            "imageUrl": "/items/4.jpeg",
+            "imageUrl": "/items/XA6-30 _Fingerprint Password_.png",
             "title": "Steel Locker 4-Door",
             "description": "Four-door multi-user locker with strong hinges and secure locking.",
             "phoneNumber": "+62 812-0000-0004",
             "TabCategory": "Safety Box",
             "category": "xp Tou Series",
             "specification": {
-                "productDimension": "1850 x 900 x 450 mm",
-                "innerDimension": "(4) 450 x 430 x 430 mm",
-                "boxBoardThickness": "0.6 mm",
-                "doorThickness": "0.8 mm",
-                "weight": "38 kg"
+                "productDimension": "30 x 36 x 30 cm",
+                "innerDimension": "28 x 35 x 20 cm",
+                "boxBoardThickness": " 2 mm",
+                "doorThickness": "5 mm",
+                "weight": "10 kg"
             },
             "availableSize": [
                 { "title": "4-Door", "desc": "1850 x 900 x 450 mm" }
@@ -83,18 +83,18 @@
             "packingInclude": "Unit, 8 keys, anti-tip brackets"
         },
         {
-            "imageUrl": "/items/5.jpeg",
+            "imageUrl": "/items/XA6-36 _Electronic Password_.png",
             "title": "Steel Locker 5-Door",
             "description": "Space-efficient five-compartment locker for personal storage.",
             "phoneNumber": "+62 812-0000-0005",
             "TabCategory": "Safety Box",
             "category": "General",
             "specification": {
-                "productDimension": "1850 x 900 x 450 mm",
-                "innerDimension": "(5) 360 x 430 x 430 mm",
-                "boxBoardThickness": "0.6 mm",
-                "doorThickness": "0.8 mm",
-                "weight": "41 kg"
+                "productDimension": "30 x 40 x 30 cm",
+                "innerDimension": "33 x 38 x 23 cm",
+                "boxBoardThickness": " 2 mm",
+                "doorThickness": "5 mm",
+                "weight": "12 kg"
             },
             "availableSize": [
                 { "title": "5-Door", "desc": "1850 x 900 x 450 mm" }
@@ -103,18 +103,18 @@
             "packingInclude": "Unit, 10 keys, wall anchors"
         },
         {
-            "imageUrl": "/items/6.jpeg",
+            "imageUrl": "/items/XA6-36 _Fingerprint Password_.png",
             "title": "Steel Locker 6-Door",
             "description": "Six-door locker for gyms and factories with reliable cylinder locks.",
             "phoneNumber": "+62 812-0000-0006",
             "TabCategory": "Safety Box",
             "category": "General",
             "specification": {
-                "productDimension": "1850 x 900 x 450 mm",
-                "innerDimension": "(6) 300 x 430 x 430 mm",
-                "boxBoardThickness": "0.6 mm",
-                "doorThickness": "0.8 mm",
-                "weight": "44 kg"
+                "productDimension": "30 x 40 x 30 cm",
+                "innerDimension": "33 x 38 x 23 cm",
+                "boxBoardThickness": " 2 mm",
+                "doorThickness": "5 mm",
+                "weight": "12 kg"
             },
             "availableSize": [
                 { "title": "6-Door", "desc": "1850 x 900 x 450 mm" }
@@ -123,18 +123,18 @@
             "packingInclude": "Unit, 12 keys, installation guide"
         },
         {
-            "imageUrl": "/items/7.jpeg",
+            "imageUrl": "/items/XA6-40 _Electronic Password_.png",
             "title": "Office Storage Cabinet",
             "description": "Two-door steel storage cabinet with adjustable shelves and locking system.",
             "phoneNumber": "+62 812-0000-0007",
             "TabCategory": "Safety Box",
             "category": "General",
             "specification": {
-                "productDimension": "1850 x 900 x 400 mm",
-                "innerDimension": "Shelves adjustable every 50 mm",
-                "boxBoardThickness": "0.7 mm",
-                "doorThickness": "0.9 mm",
-                "weight": "36 kg"
+               "productDimension": "40 x 36 x 30 cm",
+                "innerDimension": "38 x 35 x 20 cm",
+                "boxBoardThickness": " 2 mm",
+                "doorThickness": "5 mm",
+                "weight": "12 kg"
             },
             "availableSize": [
                 { "title": "Tall", "desc": "1850 x 900 x 400 mm" },
@@ -142,27 +142,6 @@
             ],
             "productDescription": "Great for files and supplies; magnetic doors and cam lock included.",
             "packingInclude": "Cabinet, 2 keys, 4 shelves"
-        },
-        {
-            "imageUrl": "/items/8.jpeg",
-            "title": "Padel Racket Pro",
-            "description": "High-performance padel racket with carbon frame for superior control.",
-            "phoneNumber": "+62 812-0000-0008",
-            "TabCategory": "Safety Box",
-            "category": "General",
-            "specification": {
-                "productDimension": "455 x 260 x 38 mm",
-                "innerDimension": "Grip size L1/L2",
-                "boxBoardThickness": "Carbon fiber face",
-                "doorThickness": "—",
-                "weight": "365 g"
-            },
-            "availableSize": [
-                { "title": "Standard", "desc": "38 mm profile, 365 g" },
-                { "title": "Light", "desc": "36 mm profile, 345 g" }
-            ],
-            "productDescription": "EVA core, rough surface texture for spin, shock-absorbing handle.",
-            "packingInclude": "Racket, head cover, overgrip"
         }
     ]
 }
