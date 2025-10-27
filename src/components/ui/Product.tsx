@@ -21,11 +21,14 @@ export interface DataProps {
   TabCategory: string;
   category: string;
   specification: {
-    productDimension: string;
-    innerDimension: string;
-    boxBoardThickness: string;
-    doorThickness: string;
-    weight: string;
+    productDimension?: string;
+    innerDimension?: string;
+    upperInnerDimension?: string;
+    lowerInnerDimension?: string;
+    boxBoardThickness?: string;
+    doorThickness?: string;
+    weight?: string;
+    [key: string]: string | undefined;
   };
   availableSize: { title: string; desc: string }[];
   productDescription: string;
