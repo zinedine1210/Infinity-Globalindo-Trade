@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useMemo, useState } from "react";
+import { ChangeEvent, useCallback, useMemo, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 import data from "../../../public/data.json";
@@ -51,7 +51,10 @@ export default function Product({ phone }: { phone: string }) {
     data.items[0].TabCategory
   );
 
-  const handleCheckFilter = (e: ChangeEvent<HTMLInputElement>, item: string) => {
+  const handleCheckFilter = (
+    e: ChangeEvent<HTMLInputElement>,
+    item: string
+  ) => {
     const checked = e.target.checked;
     if (checked) {
       setFilter([...filter, { title: item }]);
@@ -73,10 +76,17 @@ export default function Product({ phone }: { phone: string }) {
     setFilter(filAll);
   };
 
-  const isVisible = (item: DataProps) =>
-    item.TabCategory === tab || filter.some((f) => f.title === item.category);
+  const visibleItems = useMemo(() => {
+    if (filter.length === 0) {
+      return data.items.filter((item) => item.TabCategory === tab);
+    }
 
-  const visibleItems = useMemo(() => data.items.filter(isVisible), [filter, tab, isVisible]);
+    return data.items.filter(
+      (item) =>
+        item.TabCategory === tab &&
+        filter.some((f) => f.title === item.category)
+    );
+  }, [filter, tab]);
 
   return (
     <section>
@@ -110,14 +120,21 @@ export default function Product({ phone }: { phone: string }) {
         </div>
         <div className="border-t-2 mt-16 py-16 border-gray-200">
           <div className="sm:flex gap-x-10">
-            <Filter onSave={(value) => setFilter(value)} filter={filter} groupedFilters={groupedFilters} handleCheckAll={handleCheckAll} handleCheckFilter={handleCheckFilter}/>
+            <Filter
+              onSave={(value) => setFilter(value)}
+              filter={filter}
+              groupedFilters={groupedFilters}
+              handleCheckAll={handleCheckAll}
+              handleCheckFilter={handleCheckFilter}
+            />
             <div className="w-full">
-              <h1 className="font-semibold text-[28px] mb-5">Showing {visibleItems.length} product</h1>
+              <h1 className="font-semibold text-[28px] mb-5">
+                Showing {visibleItems.length} product
+              </h1>
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
-                {visibleItems
-                  .map((prod, index) => {
-                    return <CardProduct phone={phone} prod={prod} key={index} />;
-                  })}
+                {visibleItems.map((prod, index) => {
+                  return <CardProduct phone={phone} prod={prod} key={index} />;
+                })}
               </div>
             </div>
           </div>

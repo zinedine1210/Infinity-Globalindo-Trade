@@ -16,8 +16,8 @@ export default function CardProduct({ prod, phone }: { prod: DataProps, phone: s
       >
         <div className="w-full overflow-hidden h-[240px] flex items-center justify-center">
           <Image
-            src={prod.imageUrl}
-            alt={prod.title}
+            src={prod.imageUrl.trim()}
+            alt={"Gambar "+prod.title}
             width={500}
             height={500}
             className="h-[240px] w-auto"
